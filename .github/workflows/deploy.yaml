@@ -55,10 +55,16 @@ jobs:
         run: deno task valorant-blog:compile
       - name: Build clickmart
         run: deno task clickmart:compile
-      - name: Build discord-queue
-        run: deno task discord-queue:compile
       - name: Build onclick-notes
         run: deno task onclick-notes:compile
+
+      # discord-queue uses node-sass, which only has a prebuilt binary for Node 14.
+      - name: Setup Node 14
+        uses: actions/setup-node@v4
+        with:
+          node-version: '14'
+      - name: Build discord-queue
+        run: deno task discord-queue:compile
 
       # reasonable (Vite 5 / vite-ssg) builds on Node 20.
       - name: Setup Node 20
