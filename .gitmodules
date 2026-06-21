@@ -13,3 +13,6 @@
 [submodule "demos/state-sync"]
 	path = demos/state-sync
 	url = https://github.com/dustin-demos/state-sync-demo.git
+[submodule "demos/reasonable"]
+	path = demos/reasonable
+	url = https://github.com/dustin-demos/reasonable.git

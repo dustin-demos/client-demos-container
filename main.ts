@@ -22,5 +22,10 @@ Deno.serve({ port: PORT, hostname: HOSTNAME }, async (req) => {
     return serveFile(req, 'public/state-sync/index.html')
   }
 
+  // reasonable is a single-page app, so unmatched paths fall back to its index.html.
+  if (pathname.startsWith('/reasonable/')) {
+    return serveFile(req, 'public/reasonable/index.html')
+  }
+
   return response
 })

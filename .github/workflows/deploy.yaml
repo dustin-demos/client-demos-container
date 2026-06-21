@@ -47,6 +47,14 @@ jobs:
       - name: Build state-sync
         run: deno task state-sync:compile
 
+      # reasonable (Vite 5 / vite-ssg) builds on Node 20.
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Build reasonable
+        run: deno task reasonable:compile
+
       - name: Assemble public
         run: deno task assemble
 
