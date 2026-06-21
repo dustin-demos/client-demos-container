@@ -19,3 +19,12 @@
 [submodule "demos/valorant"]
 	path = demos/valorant
 	url = https://github.com/dustin-demos/valorant-editor.git
+[submodule "demos/clickmart"]
+	path = demos/clickmart
+	url = https://github.com/dustin-demos/clickm.art.git
+[submodule "demos/notes"]
+	path = demos/notes
+	url = https://github.com/dustin-demos/notes.git
+[submodule "demos/discord-queue"]
+	path = demos/discord-queue
+	url = https://github.com/dustin-demos/discord-message-queue.git

@@ -32,5 +32,20 @@ Deno.serve({ port: PORT, hostname: HOSTNAME }, async (req) => {
     return serveFile(req, 'public/valorant-blog/index.html')
   }
 
+  // clickmart is a single-page app, so unmatched paths fall back to its index.html.
+  if (pathname.startsWith('/clickmart/')) {
+    return serveFile(req, 'public/clickmart/index.html')
+  }
+
+  // discord-queue is a single-page app, so unmatched paths fall back to its index.html.
+  if (pathname.startsWith('/discord-queue/')) {
+    return serveFile(req, 'public/discord-queue/index.html')
+  }
+
+  // onclick-notes is a single-page app, so unmatched paths fall back to its index.html.
+  if (pathname.startsWith('/onclick-notes/')) {
+    return serveFile(req, 'public/onclick-notes/index.html')
+  }
+
   return response
 })

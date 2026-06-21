@@ -22,6 +22,11 @@ jobs:
         with:
           submodules: recursive
 
+      # notes and clickmart pull pocket/superstatic as git deps; npm 8 rewrites the
+      # git+https url to ssh for ls-remote, so force https to clone them anonymously.
+      - name: Force HTTPS for GitHub git deps
+        run: git config --global url."https://github.com/".insteadOf "ssh://git@github.com/"
+
       - name: Setup Deno
         uses: denoland/setup-deno@v2
         with:
@@ -48,6 +53,12 @@ jobs:
         run: deno task state-sync:compile
       - name: Build valorant-blog
         run: deno task valorant-blog:compile
+      - name: Build clickmart
+        run: deno task clickmart:compile
+      - name: Build discord-queue
+        run: deno task discord-queue:compile
+      - name: Build onclick-notes
+        run: deno task onclick-notes:compile
 
       # reasonable (Vite 5 / vite-ssg) builds on Node 20.
       - name: Setup Node 20
