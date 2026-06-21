@@ -16,3 +16,6 @@
 [submodule "demos/reasonable"]
 	path = demos/reasonable
 	url = https://github.com/dustin-demos/reasonable.git
+[submodule "demos/valorant"]
+	path = demos/valorant
+	url = https://github.com/dustin-demos/valorant-editor.git

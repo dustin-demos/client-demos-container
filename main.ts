@@ -27,5 +27,10 @@ Deno.serve({ port: PORT, hostname: HOSTNAME }, async (req) => {
     return serveFile(req, 'public/reasonable/index.html')
   }
 
+  // valorant-blog is a single-page app, so unmatched paths fall back to its index.html.
+  if (pathname.startsWith('/valorant-blog/')) {
+    return serveFile(req, 'public/valorant-blog/index.html')
+  }
+
   return response
 })

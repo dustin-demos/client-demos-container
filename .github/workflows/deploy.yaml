@@ -46,6 +46,8 @@ jobs:
         run: deno task resize:compile
       - name: Build state-sync
         run: deno task state-sync:compile
+      - name: Build valorant-blog
+        run: deno task valorant-blog:compile
 
       # reasonable (Vite 5 / vite-ssg) builds on Node 20.
       - name: Setup Node 20
