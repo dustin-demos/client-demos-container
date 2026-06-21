@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <title>DVD Video</title>
+    <style>
+      body {
+        background: black;
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+      }
+      div {
+        animation: bounce 8s linear infinite;
+      }
+      img {
+        animation: hue 8s linear infinite;
+        opacity: 0.75;
+      }
+      @keyframes bounce {
+        0%, 100% {
+          transform: translate(0vw, 40vh);
+        }
+        25% {
+          transform: translate(40vw, 0vh);
+        }
+        50% {
+          transform: translate(calc(100vw - 256px), 45vh);
+        }
+        75% {
+          transform: translate(calc(50vw - 256px), calc(100vh - 128px));
+        }
+      }
+      @keyframes hue {
+        0% {
+          filter: hue-rotate(360deg) brightness(200%);
+        }
+        100% {
+          filter: hue-rotate(0deg) brightness(200%);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <img src='logo.png'>
+    </div>
+  </body>
+</html>

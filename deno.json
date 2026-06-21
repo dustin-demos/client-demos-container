@@ -8,7 +8,7 @@
     "resize:compile": "cd demos/resize && npm install --no-audit --no-fund && NODE_ENV=production make all",
     "state-sync:compile": "cd demos/state-sync && npm install --no-audit --no-fund && make all",
 
-    "assemble": "rm -rf public && mkdir -p public/h8ball public/roguelike public/currency public/resize public/state-sync && cp index.html public/index.html && cp -r demos/h8ball/* public/h8ball/ && cp -r demos/roguelike/dist/* public/roguelike/ && cp -r demos/currency/dist/* public/currency/ && cp -r demos/resize/public/* public/resize/ && cp -r demos/state-sync/public/* public/state-sync/",
+    "assemble": "rm -rf public && mkdir -p public/h8ball public/roguelike public/currency public/resize public/state-sync public/dvd && cp index.html public/index.html && cp -r demos/h8ball/* public/h8ball/ && cp -r demos/roguelike/dist/* public/roguelike/ && cp -r demos/currency/dist/* public/currency/ && cp -r demos/resize/public/* public/resize/ && cp -r demos/state-sync/public/* public/state-sync/ && cp -r demos/orphans/dvd/* public/dvd/",
 
     "build": "deno task roguelike:compile && deno task currency:compile && deno task resize:compile && deno task state-sync:compile && deno task assemble",
     "build:docker": "docker run --rm -v \"$PWD/demos:/demos\" -w /demos node:10-buster sh -c 'cd roguelike && npm install --no-audit --no-fund && npx gulp build' && docker run --rm -v \"$PWD/demos:/demos\" -w /demos node:16-buster sh -c 'cd currency && npm install --no-audit --no-fund && npx vite build --base=/currency/ && cd ../resize && npm install --no-audit --no-fund && NODE_ENV=production make all && cd ../state-sync && npm install --no-audit --no-fund && make all' && deno task assemble"
