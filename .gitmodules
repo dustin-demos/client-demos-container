@@ -10,3 +10,6 @@
 [submodule "demos/currency"]
 	path = demos/currency
 	url = https://github.com/dustin-demos/currency.git
+[submodule "demos/state-sync"]
+	path = demos/state-sync
+	url = https://github.com/dustin-demos/state-sync-demo.git
