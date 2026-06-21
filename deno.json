@@ -1,0 +1,20 @@
+{
+  "tasks": {
+    "dev": "deno run --allow-net --allow-read --allow-env --watch main.ts",
+    "start": "deno run --allow-net --allow-read --allow-env main.ts",
+
+    "roguelike:compile": "cd demos/roguelike && npm install --no-audit --no-fund && npx gulp build",
+    "roguelike:build": "docker run --rm -v \"$PWD/demos/roguelike:/app\" -w /app node:10-buster sh -c 'npm install --no-audit --no-fund && npx gulp build'",
+
+    "assemble": "rm -rf public && mkdir -p public/h8ball public/roguelike && cp -r demos/h8ball/* public/h8ball/ && cp -r demos/roguelike/dist/* public/roguelike/",
+    "build": "deno task roguelike:build && deno task assemble"
+  },
+  "fmt": {
+    "lineWidth": 240,
+    "semiColons": false,
+    "singleQuote": true
+  },
+  "imports": {
+    "@std/http": "jsr:@std/http@^1.1.1"
+  }
+}

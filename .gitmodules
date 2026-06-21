@@ -1,0 +1,6 @@
+[submodule "demos/h8ball"]
+	path = demos/h8ball
+	url = https://github.com/dustin-demos/h8ball.git
+[submodule "demos/roguelike"]
+	path = demos/roguelike
+	url = https://github.com/dustin-demos/roguelike.git
