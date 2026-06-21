@@ -22,18 +22,31 @@ jobs:
         with:
           submodules: recursive
 
-      - name: Setup Node 10 (legacy demo builds)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '10'
-
       - name: Setup Deno
         uses: denoland/setup-deno@v2
         with:
           deno-version: v2.x
 
-      - name: Build demos
-        run: deno task build
+      # roguelike needs the legacy gulp 3 + browserify toolchain (Node 10).
+      - name: Setup Node 10
+        uses: actions/setup-node@v4
+        with:
+          node-version: '10'
+      - name: Build roguelike
+        run: deno task roguelike:compile
+
+      # currency (Vite 2) and resize (esbuild/sass) build on Node 16.
+      - name: Setup Node 16
+        uses: actions/setup-node@v4
+        with:
+          node-version: '16'
+      - name: Build currency
+        run: deno task currency:compile
+      - name: Build resize
+        run: deno task resize:compile
+
+      - name: Assemble public
+        run: deno task assemble
 
       - name: Setup Fly CLI
         uses: superfly/flyctl-actions/setup-flyctl@master

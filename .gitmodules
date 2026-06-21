@@ -4,3 +4,9 @@
 [submodule "demos/roguelike"]
 	path = demos/roguelike
 	url = https://github.com/dustin-demos/roguelike.git
+[submodule "demos/resize"]
+	path = demos/resize
+	url = https://github.com/dustin-demos/resize.gg.git
+[submodule "demos/currency"]
+	path = demos/currency
+	url = https://github.com/dustin-demos/currency.git
