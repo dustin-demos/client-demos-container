@@ -1,0 +1,94 @@
+@function em($value) {
+  @return ($value / 16) * 1em;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  border: 0;
+  padding: 0;
+  word-wrap: break-word;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.5em;
+  margin: 1em;
+  background-color: rgba(mix(dodgerblue, black, 25%), 0.0625);
+}
+
+/* MIXIN STARTS HERE */
+/* Requires LifeSaver Sass mixin linked externally */
+@mixin bubble($radius: 8, $color: dodgerblue, $proportional: false) {
+  $tail: $radius * 1.5;
+  $half: $radius * 0.5;
+  $double: $radius * 2;
+
+  display: inline-block;
+  margin: em($half);
+  min-height: em($double);
+  // @include padding($half $tail, em);
+  padding: em($half) em($tail);
+  position: relative;
+  border-radius: em($radius);
+  line-height: 1.5;
+  color: white;
+  background-color: $color;
+
+  @if $proportional == true {
+    p {
+      font-size: em($radius);
+    }
+  }
+
+  &::before {
+    content: '';
+    display: block;
+    width: em($tail);
+    height: em($radius);
+    // @include absolute(x ($radius - $tail) 0 x, em);
+    position: absolute;
+    right: em($radius - $tail);
+    bottom: 0;
+    border-left: em($radius) solid $color;
+    border-bottom-left-radius: 100%;
+    z-index: -1;
+  }
+}
+
+.bubble-center {
+  text-align: right;
+}
+
+.bubble {
+  @include bubble;
+}
+
+.bubble-1 {
+  @include bubble(8, orange);
+}
+
+.bubble-2 {
+  @include bubble(16, firebrick);
+}
+
+.bubble-3 {
+  @include bubble(32, deepskyblue);
+}
+
+.proportional {
+  .bubble {
+    @include bubble($proportional: true);
+  }
+
+  .bubble-1 {
+    @include bubble(8, orange, $proportional: true);
+  }
+
+  .bubble-2 {
+    @include bubble(16, firebrick, $proportional: true);
+  }
+
+  .bubble-3 {
+    @include bubble(32, deepskyblue, $proportional: true);
+  }
+}

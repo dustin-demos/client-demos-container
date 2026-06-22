@@ -1,0 +1,93 @@
+$blue-1: dodgerblue;
+$blue-2: rgba($blue-1, 0.5);
+$blue-3: rgba($blue-1, 0.25);
+
+$red-1: red;
+$red-2: rgba($red-1, 0.5);
+$red-3: rgba($red-1, 0.25);
+
+$gutter: 0.5em;
+
+$border: 2px solid $blue-1;
+$border-dashed: 2px dashed $blue-2;
+$border-radius: 0.5em;
+
+* {
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+  margin: 0;
+  font-family: Gidole, 'Helvetica Neue', 'Helvetica', sans-serif;
+
+  font-size: inherit;
+}
+
+body {
+  font-size: 1vw;
+}
+
+.app {
+  display: flex;
+  flex-flow: column;
+  padding: $gutter;
+  max-width: 75em;
+  margin: auto;
+}
+
+.grid {
+  display: flex;
+  flex-flow: wrap;
+  margin: $gutter;
+  padding: $gutter;
+  border: $border-dashed;
+  border-radius: $border-radius * 2;
+}
+
+.item {
+  width: calc((100% / 4) - #{$gutter * 2});
+  margin: $gutter;
+
+  &::before {
+    display: block;
+    padding: 0 0 75%;
+    content: '';
+  }
+
+  &.-small {
+    width: calc((100% / 8) - #{$gutter * 2});
+  }
+}
+
+.check {
+  display: flex;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: $border;
+  border-radius: $border-radius / 4;
+  cursor: pointer;
+  font-size: 4em;
+  color: $blue-1;
+
+  > * {
+    margin: auto;
+  }
+
+  &:hover {
+    border-color: $blue-1;
+    background: $blue-3;
+  }
+
+  &.-checked, &.-thumb {
+    color: white;
+    background: $blue-2;
+
+    &:hover {
+      color: white;
+      border-color: $red-1;
+      background: $red-2;
+    }
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue.js: Queue Items 2</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <script id="check" type="x/template">
+  <div class="check" v-on:click="checked = !checked, $emit('checked', { checked: checked, id: id })" v-bind:class="{ '-checked': checked }">
+    <div>
+      <slot></slot>
+    </div>
+  </div>
+</script>
+<script id="product" type="x/template">
+  <div>
+    <div class="grid">
+      <div class="item -small" v-for="id in selected">
+        <check v-on:checked="select($event)" v-bind:id="id" v-bind:checked="checked(id)">{{ id }}</check>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="item" v-for="id in products">
+        <check v-on:checked="select($event)" v-bind:id="id" v-bind:checked="checked(id)">{{ id }}</check>
+      </div>
+    </div>
+  </div>
+</script>
+<script id="app" type="x/template">
+  <div class="app">
+    <product></product>
+  </div>
+</script>
+<div id="root"></div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>

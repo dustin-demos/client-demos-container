@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Vue Pagination</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="page">
+  <div class="app" id="app">
+    <!-- Simple example of pagination-->
+    <div class="emoji-wrap">
+      <transition name="fade">
+        <div class="emoji" v-if="page === 1"><span>📄</span></div>
+      </transition>
+      <transition name="fade">
+        <div class="emoji" v-if="page === 2"><span>🐮</span></div>
+      </transition>
+      <transition name="fade">
+        <div class="emoji" v-if="page === 3"><span>🐷</span></div>
+      </transition>
+      <transition name="fade">
+        <div class="emoji" v-if="page === 4"><span>🐸</span></div>
+      </transition>
+      <transition name="fade">
+        <div class="emoji" v-if="page === 5"><span>🐹</span></div>
+      </transition>
+    </div>
+    <!-- Example of pagination with loops-->
+    <div class="item-wrap-wrap">
+      <div v-for="item in range">
+        <transition name="fade">
+          <div class="item-wrap" v-if="page === item">
+            <div class="item" v-for="thing in display"><span>{{ thing.name }}</span></div>
+          </div>
+        </transition>
+      </div>
+    </div>
+    <!-- Example of pagination with no animation-->
+    <div class="item-wrap-wrap">
+      <div class="item-wrap">
+        <div class="item" v-for="thing in display"><span>{{ thing.name }}</span></div>
+      </div>
+    </div>
+    <!-- Example of pagination with transition-group (broken)-->
+    <div class="button-wrap">
+      <div class="button -emoji" v-on:click="page = page - 1" v-bind:dim="page === 1">⬅️</div>
+      <div class="button" v-on:click="page = page - 2" v-bind:hide="page - 2 &lt; 1 ? true : false">{{ page - 2 }}</div>
+      <div class="button" v-on:click="page = page - 1" v-bind:hide="page - 1 &lt; 1 ? true : false">{{ page - 1 }}</div>
+      <div class="button -active">
+        <input v-on:keydown.up="page = page + 1" v-on:keydown.down="page = page - 1" v-model.number="page"/>
+      </div>
+      <div class="button" v-on:click="page = page + 1" v-bind:hide="page + 1 &gt; last ? true : false">{{ page + 1 }}</div>
+      <div class="button" v-on:click="page = page + 2" v-bind:hide="page + 2 &gt; last ? true : false">{{ page + 2 }}</div>
+      <div class="button -emoji" v-on:click="page = page + 1" v-bind:dim="page === last">➡️</div>
+    </div>
+  </div>
+</div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0-rc.7/vue.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.2/lodash.min.js'></script><script  src="./script.js"></script>
+
+  </body>
+  
+</html>

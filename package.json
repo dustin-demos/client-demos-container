@@ -1,0 +1,7 @@
+{
+  "private": true,
+  "devDependencies": {
+    "pug": "2.0.4",
+    "sass": "1.101.0"
+  }
+}

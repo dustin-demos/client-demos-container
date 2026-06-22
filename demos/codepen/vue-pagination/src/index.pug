@@ -1,0 +1,35 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Vue Pagination
+    link(rel='stylesheet' href='./style.css')
+  body
+    .page
+      #app.app
+        .emoji-wrap
+          transition(name='fade'): .emoji(v-if='page === 1'): span 📄
+          transition(name='fade'): .emoji(v-if='page === 2'): span 🐮
+          transition(name='fade'): .emoji(v-if='page === 3'): span 🐷
+          transition(name='fade'): .emoji(v-if='page === 4'): span 🐸
+          transition(name='fade'): .emoji(v-if='page === 5'): span 🐹
+        .item-wrap-wrap
+          div(v-for='item in range')
+            transition(name='fade')
+              .item-wrap(v-if='page === item')
+                .item(v-for='thing in display')
+                  span {{ thing.name }}
+        .item-wrap-wrap: .item-wrap
+          .item(v-for='thing in display')
+            span {{ thing.name }}
+        .button-wrap
+          .button.-emoji(v-on:click='page = page - 1' v-bind:dim='page === 1') ⬅️
+          .button(v-on:click='page = page - 2' v-bind:hide='page - 2 < 1 ? true : false') {{ page - 2 }}
+          .button(v-on:click='page = page - 1' v-bind:hide='page - 1 < 1 ? true : false') {{ page - 1 }}
+          .button.-active: input(v-on:keydown.up='page = page + 1' v-on:keydown.down='page = page - 1' v-model.number='page')
+          .button(v-on:click='page = page + 1' v-bind:hide='page + 1 > last ? true : false') {{ page + 1 }}
+          .button(v-on:click='page = page + 2' v-bind:hide='page + 2 > last ? true : false') {{ page + 2 }}
+          .button.-emoji(v-on:click='page = page + 1' v-bind:dim='page === last') ➡️
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.0-rc.7/vue.min.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.2/lodash.min.js')
+    script(src='./script.js')

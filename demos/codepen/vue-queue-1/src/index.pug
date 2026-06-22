@@ -1,0 +1,28 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Vue.js: Queue Items
+    link(rel='stylesheet' href='./style.css')
+  body
+    script(id='check' type='x/template')
+      .check(v-on:click="checked = !checked, $emit('checked', { checked: checked, id: id })" v-bind:class="{ '-checked': checked }")
+        div
+          slot
+    script(id='thumb' type='x/template')
+      .grid
+        .item.-small(v-for='id in thumbs')
+          .check.-thumb
+            div {{ id }}
+    script(id='product' type='x/template')
+      .grid
+        .item(v-for='id in ids')
+          check(v-bind:id='id' v-on:checked='select($event)') {{ id }}
+    script(id='app' type='x/template')
+      .app
+        thumb(v-bind:thumbs='thumbs')
+        product(v-on:selected='thumbs = $event')
+    #root
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.js')
+    script(src='./script.js')

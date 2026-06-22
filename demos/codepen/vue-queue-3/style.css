@@ -1,0 +1,67 @@
+* {
+  position: relative;
+  box-sizing: border-box;
+  user-select: none;
+  margin: 0;
+  font-family: Gidole, "Helvetica Neue", "Helvetica", sans-serif;
+  font-size: inherit;
+}
+
+body {
+  font-size: 1vw;
+}
+
+.page {
+  display: flex;
+  flex-flow: column;
+  max-width: 75em;
+  margin: auto;
+  padding: 0.5em;
+}
+
+.grid {
+  display: flex;
+  flex-flow: wrap;
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 2px dashed rgba(30, 144, 255, 0.5);
+  border-radius: 1em;
+}
+
+.item {
+  width: calc((100% / 4) - 1em);
+  margin: 0.5em;
+}
+.item.-small {
+  width: calc((100% / 8) - 1em);
+}
+
+.check {
+  display: flex;
+  border: 2px solid dodgerblue;
+  border-radius: 0.125em;
+  color: dodgerblue;
+  font-size: 4em;
+  cursor: pointer;
+}
+.check::before {
+  display: block;
+  padding: 0 0 75%;
+  content: "";
+}
+.check > * {
+  margin: auto;
+}
+.check:hover {
+  border-color: dodgerblue;
+  background: rgba(30, 144, 255, 0.25);
+}
+.check.-checked, .check.-thumb {
+  color: white;
+  background: rgba(30, 144, 255, 0.5);
+}
+.check.-checked:hover, .check.-thumb:hover {
+  border-color: red;
+  color: white;
+  background: rgba(255, 0, 0, 0.5);
+}

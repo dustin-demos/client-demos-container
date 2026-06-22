@@ -1,0 +1,27 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title Vue.js: Queue Items 3 (Vuex)
+    link(rel='stylesheet' href='./style.css')
+  body
+    script(id='check' type='x/template')
+      .check(v-on:click='queue()' v-bind:class="{ '-checked': !item.queue }")
+        div
+          slot
+    script(id='item' type='x/template')
+      .page
+        .grid
+          .item.-small(v-for='id in queued')
+            check(v-bind:item='{ queue: is_queued(id), id: id }') {{ id }}
+        .grid
+          .item(v-for='id in items')
+            check(v-bind:item='{ queue: is_queued(id), id: id }') {{ id }}
+    script(id='app' type='x/template')
+      .app
+        item
+    #root
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.0.3/vue.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/vuex/2.0.0/vuex.js')
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.16.6/lodash.js')
+    script(src='./script.js')
