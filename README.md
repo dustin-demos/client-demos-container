@@ -25,7 +25,7 @@ Each ran in some long-dead spot (Netlify, GitHub Pages, a local file) and is ser
   - **Vue Queue Items v2** (Nov 2016) — same UI, simplified to component-local state with no emitting.
   - **Vue Queue Items v3** (Nov 2016) — same UI, state moved into a Vuex store.
   - **CSS 3D Toggle Button** (Sep 2016) — a toggle button with a CSS 3D flip animation.
-  - **Vue Pagination** (Sep 2016) — a pagination component built in Vue 2 to show someone how pagination works.
+  - **Vue Pagination** (Sep 2016) — a pagination component built in Vue 2.0.0-rc.7 to show someone how pagination works. One change here: the static fallback item list (a non-Vue duplicate rendered below the animated one) is commented out so only the animated list shows.
   - **Emoji** (Sep 2016) — a single emoji rendered large; a placeholder tile for the CodePen profile.
   - **SVG Digital Clock** (Jan 2016) — a digital clock rendered in SVG.
   - **iOS Chat Bubbles** (Mar 2015) — pure CSS iOS-style chat bubbles written as a Sass mixin, one div per bubble.
