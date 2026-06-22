@@ -19,7 +19,18 @@ Each ran in some long-dead spot (Netlify, GitHub Pages, a local file) and is ser
 - **dvd video** — a bouncing DVD-logo screensaver from **February 2019**. A Twitch streamer I watched wanted one and couldn't find a version that worked simply and consistently; I often helped smaller streamers I watched with quick things like this, so I made this quick animation. It is pure CSS, which makes it about as hard to break as a web page gets. It never had a repo, so it lives here directly under `orphans/`.
 - **h8ball** — a Hyperapp magic eight-ball I first committed **February 2018**. A silly project: I wrote the code while showing my non-developer friend Kellyn how it's done, and Kellyn came up with most of the prompts and ideas (the `index.html` still credits "kellynheller and whaaaley"). Loads Hyperapp from a CDN; the only change here pins that CDN to `hyperapp@1.2.9` — the v1 release it was written against (the bare unpkg URL now resolves to an incompatible v2).
 - **roguelike** — a Vue-powered web roguelike I first committed **October 2016**, built with my friends Brandon (`GrandonBroseph`) and Connor Hartley. It was a low-stakes "let's build a game together" thing: Brandon knew roguelikes, I knew Vue, Connor pitched in. Built with Vue 2.0.1 (loaded from a CDN, released just weeks earlier) and a gulp 3 + browserify toolchain — old enough that it only builds on Node 10 today. The last commit at the time left the game's init commented out; the only change here restores it.
-- **codepen demos** — a collection of small experiments from **2014–2016** originally published on CodePen. Each was written in Pug + Sass + vanilla JS (or Vue 2 / jQuery), using the tooling CodePen provided at the time. They live here under `demos/codepen/` and are compiled at build time with the pug and sass Node APIs. The collection includes: iOS Chat Bubbles (2015), jQuery Dropdown Menu (2015), Messenger (2014), Vue Pagination (2016), Emoji (2016), Vue Queue Items v1/v2/v3 (2016), CSS 3D Toggle Button (2016), SVG Digital Clock (2016), and three Framework Challenge entries (2021).
+- **codepen demos** — a collection of small experiments originally published on CodePen. Each was written in Pug + Sass + vanilla JS (or Vue 2 / jQuery), using the tooling CodePen provided at the time. They live here under `demos/codepen/` and are compiled at build time with the pug and sass Node APIs.
+  - **iOS Chat Bubbles** (2015) — pure CSS iOS-style chat bubbles written as a Sass mixin, one div per bubble.
+  - **jQuery Dropdown Menu** (2015) — a deeply nested jQuery dropdown written as a `$.fn` plugin; DOM-as-state, no state management concept.
+  - **Messenger** (2014) — a recreation of the Messenger UI in pure CSS.
+  - **Vue Pagination** (2016) — a pagination component built in Vue 2 to show someone how pagination works.
+  - **Emoji** (2016) — a single emoji rendered large; a placeholder tile for the CodePen profile.
+  - **Vue Queue Items v1** (2016) — queue UI with state in the component, bubbled up via events.
+  - **Vue Queue Items v2** (2016) — same UI, simplified to component-local state with no emitting.
+  - **Vue Queue Items v3** (2016) — same UI, state moved into a Vuex store.
+  - **CSS 3D Toggle Button** (2016) — a toggle button with a CSS 3D flip animation.
+  - **SVG Digital Clock** (2016) — a digital clock rendered in SVG.
+  - **Framework Challenge** (2021) — the same UI built in three frameworks: Pocket JS, React, and Vue 3.
 
 ## Layout
 
