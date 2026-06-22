@@ -57,6 +57,8 @@ jobs:
         run: deno task clickmart:compile
       - name: Build onclick-notes
         run: deno task onclick-notes:compile
+      - name: Build instatistics
+        run: deno task instatistics:compile
 
       # discord-queue uses node-sass, which only has a prebuilt binary for Node 14.
       - name: Setup Node 14
