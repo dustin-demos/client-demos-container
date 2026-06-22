@@ -74,6 +74,12 @@ jobs:
       - name: Build reasonable
         run: deno task reasonable:compile
 
+      # codepen demos compile with pug + sass node api (works on any modern node).
+      - name: Install codepen compile deps
+        run: npm install --no-audit --no-fund
+      - name: Build codepen demos
+        run: deno task codepen:compile
+
       - name: Assemble public
         run: deno task assemble
 
