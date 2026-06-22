@@ -1,5 +1,6 @@
 public/
 node_modules/
+demos/codepen/**/dist/
 
 .env
 scripts/**/.env
