@@ -19,9 +19,9 @@ html(lang='en')
               .item-wrap(v-if='page === item')
                 .item(v-for='thing in display')
                   span {{ thing.name }}
-        .item-wrap-wrap: .item-wrap
-          .item(v-for='thing in display')
-            span {{ thing.name }}
+        //- .item-wrap-wrap: .item-wrap
+        //-   .item(v-for='thing in display')
+        //-     span {{ thing.name }}
         .button-wrap
           .button.-emoji(v-on:click='page = page - 1' v-bind:dim='page === 1') ⬅️
           .button(v-on:click='page = page - 2' v-bind:hide='page - 2 < 1 ? true : false') {{ page - 2 }}
