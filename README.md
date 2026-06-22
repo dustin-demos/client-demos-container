@@ -21,12 +21,10 @@ Each ran in some long-dead spot (Netlify, GitHub Pages, a local file) and is ser
 - **roguelike** — a Vue-powered web roguelike I first committed **October 2016**, built with my friends Brandon (`GrandonBroseph`) and Connor Hartley. It was a low-stakes "let's build a game together" thing: Brandon knew roguelikes, I knew Vue, Connor pitched in. Built with Vue 2.0.1 (loaded from a CDN, released just weeks earlier) and a gulp 3 + browserify toolchain — old enough that it only builds on Node 10 today. The last commit at the time left the game's init commented out; the only change here restores it.
 - **codepen demos** — a collection of small experiments originally published on CodePen. Each was written in Pug + Sass + vanilla JS (or Vue 2 / jQuery), using the tooling CodePen provided at the time. They live here under `demos/codepen/` and are compiled at build time with the pug and sass Node APIs.
   - **Framework Challenge** (Apr 2021) — the same UI built in three frameworks: Pocket JS, React, and Vue 3.
-  - **Vue Queue Items v1** (Nov 2016) — queue UI with state in the component, bubbled up via events.
-  - **Vue Queue Items v2** (Nov 2016) — same UI, simplified to component-local state with no emitting.
-  - **Vue Queue Items v3** (Nov 2016) — same UI, state moved into a Vuex store.
+  - **Vue Queue Items** (Nov 2016) — the same queue UI built three ways to showcase different state management approaches in Vue 2: Events (state bubbles up via emits), Local State (state stays in the component), and Vuex (state in a shared store). No changes to the source.
   - **CSS 3D Toggle Button** (Sep 2016) — a toggle button with a CSS 3D flip animation.
-  - **Vue Pagination** (Sep 2016) — a pagination component built in Vue 2.0.0-rc.7 to show someone how pagination works. Two changes here: the static fallback item list (a non-Vue duplicate rendered below the animated one) is commented out so only the animated list shows; and `margin-bottom: 24px` is added to `.emoji-wrap` so the emoji has breathing room above the items.
-  - **Emoji** (Sep 2016) — a single emoji rendered large; a placeholder tile for the CodePen profile.
+  - **Vue Pagination** (Sep 2016) — a pagination component built in Vue 2.0.0-rc.7. Two changes here: the static fallback item list (a non-Vue duplicate rendered below the animated one) is commented out so only the animated list shows; and `margin-bottom: 24px` is added to `.emoji-wrap` so the emoji has breathing room above the items.
+  - **Crying Emoji** (Sep 2016) — a single emoji rendered large; a placeholder tile for the CodePen profile. No changes to the source.
   - **SVG Digital Clock** (Jan 2016) — a digital clock rendered in SVG.
   - **iOS Chat Bubbles** (Mar 2015) — pure CSS iOS-style chat bubbles written as a Sass mixin, one div per bubble.
   - **jQuery Dropdown Menu** (Mar 2015) — a deeply nested jQuery dropdown written as a `$.fn` plugin; DOM-as-state, no state management concept.
