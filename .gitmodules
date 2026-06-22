@@ -28,3 +28,6 @@
 [submodule "demos/discord-queue"]
 	path = demos/discord-queue
 	url = https://github.com/dustin-demos/discord-message-queue.git
+[submodule "demos/instatistics"]
+	path = demos/instatistics
+	url = https://github.com/dustin-demos/insights.git

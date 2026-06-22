@@ -132,7 +132,6 @@ footer {
   margin-top: 0.25em !important;
 }
 .message {
-  min-height: 53.33203125em;
   max-width: 30em; /* !!!!!!!!!! COMMENT OUT THIS LINE TO MAKE IT FULL WIDTH !!!!!!!!!! */
   display: -webkit-flex;
   display: -ms-flexbox;

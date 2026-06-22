@@ -47,5 +47,10 @@ Deno.serve({ port: PORT, hostname: HOSTNAME }, async (req) => {
     return serveFile(req, 'public/onclick-notes/index.html')
   }
 
+  // instatistics is a single-page app, so unmatched paths fall back to its index.html.
+  if (pathname.startsWith('/instatistics/')) {
+    return serveFile(req, 'public/instatistics/index.html')
+  }
+
   return response
 })
