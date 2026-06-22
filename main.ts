@@ -4,7 +4,7 @@ const PORT = parseInt(Deno.env.get('PORT') ?? '8080', 10)
 const HOSTNAME = Deno.env.get('HOSTNAME') ?? '::'
 
 Deno.serve({ port: PORT, hostname: HOSTNAME }, async (req) => {
-  const response = await serveDir(req, { fsRoot: 'public', quiet: true })
+  const response = await serveDir(req, { fsRoot: 'public', quiet: true, enableIndex: true })
 
   if (response.status !== 404) {
     return response
