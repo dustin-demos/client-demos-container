@@ -1,0 +1,17 @@
+html, body, div {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: rgb(159, 191, 135);
+}
+
+div {
+  display: flex;
+}
+
+svg {
+  flex: 1;
+  opacity: 0.8;
+}

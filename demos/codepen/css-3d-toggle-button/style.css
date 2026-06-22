@@ -1,0 +1,114 @@
+* {
+  position: relative;
+}
+
+html {
+  zoom: 1.25;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  margin: 0;
+  font-size: 4em;
+  background: linear-gradient(#0f1113, #1f2123);
+}
+
+.wrap {
+  width: 4em;
+  height: 1em;
+  margin: auto;
+}
+
+@keyframes rotate {
+  0%, 100% {
+    transform: rotateX(22.5deg);
+  }
+  50% {
+    transform: rotateX(67.5deg);
+  }
+}
+@keyframes rotate-stalk {
+  0%, 100% {
+    transform: rotateX(-67.5deg);
+  }
+  50% {
+    transform: rotateX(-22.5deg);
+  }
+}
+@keyframes rotate-face {
+  0%, 100% {
+    transform: rotateX(22.5deg) translateZ(0.5em);
+  }
+  50% {
+    transform: rotateX(67.5deg) translateZ(0.5em);
+  }
+}
+._layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.bottom {
+  width: 4em;
+  height: 2em;
+  border-radius: 1em;
+  background: radial-gradient(circle at 1em 1em, #0f1113, #3f4143);
+  transition: box-shadow 0.1875s ease-in-out;
+  box-shadow: 0 0 0.5em 0 rgba(15, 17, 19, 0.5), inset 0 0 1em 0 rgba(15, 17, 19, 0.75);
+  animation: rotate 2s ease-in-out infinite;
+}
+
+.base, .stalk, .face {
+  transition: margin 0.1875s ease-in-out;
+}
+
+.base, .stalk {
+  background: linear-gradient(90deg, #1a7edf, #0b3660);
+}
+
+.base {
+  width: 2em;
+  height: 2em;
+  border-radius: 1em;
+  animation: rotate 2s ease-in-out infinite;
+}
+
+.stalk {
+  width: 2em;
+  height: 0.5em;
+  top: 0.5em;
+  transform: rotateX(-45deg);
+  transform-origin: bottom;
+  animation: rotate-stalk 2s ease-in-out infinite;
+}
+
+.face {
+  width: 2em;
+  height: 2em;
+  border-radius: 1em;
+  background: linear-gradient(90deg, dodgerblue, #135a9f);
+  transform: rotateX(45deg) translateZ(0.5em);
+  animation: rotate-face 2s ease-in-out infinite;
+}
+
+.wrap {
+  cursor: pointer;
+}
+.wrap.-toggle .base, .wrap.-toggle .stalk, .wrap.-toggle .face {
+  margin: 0 0 0 2em;
+}
+.wrap.-toggle .bottom {
+  background: #fefeff;
+  box-shadow: inset 0 0 0.0625em 0 dodgerblue, inset 0 0 0.5em 0 dodgerblue, 0 0 1em 0 dodgerblue;
+}
+.wrap.-toggle .base, .wrap.-toggle .stalk {
+  background: linear-gradient(90deg, #8fc8ff, #176cbf);
+}
+.wrap.-toggle .face {
+  background: linear-gradient(90deg, #8fc8ff, #56acff);
+}
