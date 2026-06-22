@@ -20,6 +20,8 @@ Each ran in some long-dead spot (Netlify, GitHub Pages, a local file) and is ser
   - Replaced dead `via.placeholder.com` image URLs with `placehold.co`.
   - Kept `/missing` as an un-prefixed catch-all 404 fallback (not `/clickmart/missing`).
   - Re-gated the dev debug panel on the `DEV` flag; it was unconditionally rendered in the original.
+  - Commented out the home placeholder ad banner (a 1440x144 grey box) so the demo looks cleaner.
+  - Added top/bottom padding to the carousel Shop Now button so it is not cramped against its border.
 
 - **currency exchange** — a currency converter I built as a job-application code challenge in **May 2021**. I didn't get the job, but the demo was okay enough that I kept it on my site for years as an example. Vue 3 + Vite; built here with `--base=/currency/` so it serves under its path.
   - Centered the converter card with `display: grid; place-items: center; min-height: 100vh` instead of the original fixed `margin: 128px auto`.
@@ -51,11 +53,11 @@ Each ran in some long-dead spot (Netlify, GitHub Pages, a local file) and is ser
   - Pinned `superfine` to `8.0.10` (8.2 dropped the text-node `tag` handling its custom hyperscript relies on, which otherwise crashed the render).
   - Builds on Node 14 for node-sass's prebuilt binary.
 
-- **dvd video** — a bouncing DVD-logo screensaver from **February 2019**. A Twitch streamer I watched wanted one and couldn't find a version that worked simply and consistently; I often helped smaller streamers I watched with quick things like this, so I made this quick animation. It is pure CSS, which makes it about as hard to break as a web page gets. It never had a repo, so it lives here directly under `orphans/`.
+- **dvd video** — a bouncing DVD-logo screensaver from **February 2019**. A Twitch streamer I watched wanted one and couldn't find a version that worked simply and consistently; I often helped smaller streamers I watched with quick things like this, so I made this quick animation. It is CSS, which makes it about as hard to break as a web page gets. It never had a repo, so it lives here directly under `orphans/`.
   - No changes to the source.
 
 - **h8ball** — a Hyperapp magic eight-ball I first committed **February 2018**. A silly project: I wrote the code while showing my non-developer friend Kellyn how it's done, and Kellyn came up with most of the prompts and ideas (the `index.html` still credits "kellynheller and whaaaley"). Loads Hyperapp from a CDN.
-  - Pinned the Hyperapp CDN to `hyperapp@1.2.9` — the v1 release it was written against (the bare unpkg URL now resolves to an incompatible v2).
+  - Pinned the Hyperapp CDN to `hyperapp@1.2.9` — the v1 release it was built with (the bare unpkg URL now resolves to an incompatible v2).
 
 - **roguelike** — a Vue-powered web roguelike I first committed **October 2016**, built with my friends Brandon (`GrandonBroseph`) and Connor Hartley. It was a low-stakes "let's build a game together" thing: Brandon knew roguelikes, I knew Vue, Connor pitched in. Built with Vue 2.0.1 (loaded from a CDN, released just weeks earlier) and a gulp 3 + browserify toolchain — old enough that it only builds on Node 10 today.
   - Restored the game init that the final 2016 commit had left commented out.
@@ -69,9 +71,9 @@ Each ran in some long-dead spot (Netlify, GitHub Pages, a local file) and is ser
     - Added `margin-bottom: 24px` to `.emoji-wrap` so the emoji has breathing room above the items.
   - **Crying Emoji** (Sep 2016) — a single emoji rendered large; a placeholder tile for the CodePen profile. No changes to the source.
   - **SVG Digital Clock** (Jan 2016) — a digital clock rendered in SVG. No changes to the source.
-  - **iOS Chat Bubbles** (Mar 2015) — pure CSS iOS-style chat bubbles written as a Sass mixin, one div per bubble. No changes to the source.
+  - **iOS Chat Bubbles** (Mar 2015) — CSS iOS-style chat bubbles written as a Sass mixin, one div per bubble. No changes to the source.
   - **jQuery Dropdown Menu** (Mar 2015) — a deeply nested jQuery dropdown written as a `$.fn` plugin; DOM-as-state, no state management concept. No changes to the source.
-  - **Messenger** (Dec 2014) — a recreation of the Messenger UI in pure CSS. No changes to the source.
+  - **Messenger** (Dec 2014) — a recreation of the Messenger UI in CSS. No changes to the source.
 
 ## Layout
 
